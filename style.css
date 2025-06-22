@@ -1,0 +1,146 @@
+body {
+    font-family: 'Pixelify Sans', 'Nanum Gothic Coding', 'Courier New', Courier, monospace; /* 픽셀 폰트 우선, 없으면 기본 고정폭 폰트 */
+    background-color: #A0522D; /* 흙색 배경 */
+    color: #FFFFFF; /* 흰색 텍스트 */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    image-rendering: pixelated; /* 이미지 픽셀화 처리 */
+}
+
+#game-container {
+    width: 800px;
+    max-width: 95%;
+    border: 5px solid #5C4033; /* 짙은 나무색 테두리 */
+    background-color: #8B4513; /* 나무색 내부 배경 */
+    padding: 15px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.5);
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2.5em;
+    color: #FFD700; /* 금색 타이틀 */
+    text-shadow: 2px 2px #000000;
+    margin-bottom: 10px;
+}
+
+#resource-bar {
+    background-color: #5C4033; /* 짙은 나무색 */
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: space-around;
+}
+
+#resource-bar span {
+    font-size: 1.1em;
+}
+
+main {
+    display: flex;
+    gap: 15px;
+}
+
+#game-map {
+    width: 60%;
+    height: 400px; /* 맵 높이, 추후 JavaScript로 타일 크기에 맞게 조절 */
+    background-color: #228B22; /* 풀색 배경 */
+    border: 3px solid #5C4033;
+    display: grid; /* JavaScript로 그리드 생성 예정 */
+    grid-template-columns: repeat(10, 1fr); /* 예시: 10x10 맵 */
+    grid-template-rows: repeat(10, 1fr);    /* 예시: 10x10 맵 */
+}
+
+/* 맵 타일 기본 스타일 (JavaScript에서 동적으로 생성될 때 클래스 추가) */
+.map-tile {
+    border: 1px solid #4A3B31; /* 연한 나무색 경계 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5em; /* 아이콘 크기 조절 */
+    line-height: 1; /* 아이콘 수직 정렬 */
+}
+
+.map-tile.grass {
+    background-color: #90EE90; /* 연한 녹색 */
+}
+.map-tile.forest {
+    background-color: #228B22; /* 풀색 (기본 맵 배경과 동일하나, 아이콘으로 구분) */
+    /* color: darkgreen; */
+}
+.map-tile.rock {
+    background-color: #A9A9A9; /* 회색 */
+    /* color: dimgray; */
+}
+.map-tile.water {
+    background-color: #ADD8E6; /* 연한 파란색 */
+    /* color: blue; */
+}
+
+
+#action-panel {
+    width: 35%;
+    background-color: #D2B48C; /* 황갈색 배경 */
+    border: 3px solid #5C4033;
+    padding: 10px;
+    color: #3A2D27; /* 어두운 갈색 텍스트 */
+}
+
+#action-panel h2 {
+    margin-top: 0;
+    color: #5C4033;
+    border-bottom: 2px solid #5C4033;
+    padding-bottom: 5px;
+}
+
+#action-panel button {
+    display: block;
+    width: 90%;
+    padding: 10px;
+    margin: 10px auto;
+    background-color: #8B4513; /* 나무색 버튼 */
+    color: white;
+    border: 2px solid #5C4033;
+    border-radius: 5px;
+    font-family: inherit; /* body의 폰트 상속 */
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+#action-panel button:hover {
+    background-color: #A0522D; /* 밝은 나무색 */
+}
+
+#action-panel button:active {
+    background-color: #5C4033; /* 어두운 나무색 */
+}
+
+footer {
+    margin-top: 15px;
+    padding-top: 10px;
+    border-top: 2px solid #5C4033;
+}
+
+footer p {
+    font-size: 1.2em;
+    color: #FFDEAD; /* 나바호 흰색 */
+}
+
+/* 픽셀 폰트 CDN 추가 (Google Fonts) */
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap');
+/* 나눔고딕코딩 (대체 폰트) */
+@import url('https://fonts.googleapis.com/css?family=Nanum+Gothic+Coding&display=swap');
+
+/* 기본 버튼 비활성화 스타일 */
+button:disabled {
+    background-color: #A9A9A9 !important; /* 회색 */
+    color: #696969 !important; /* 어두운 회색 */
+    cursor: not-allowed !important;
+    border-color: #808080 !important;
+}

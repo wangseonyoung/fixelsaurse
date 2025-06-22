@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>석기시대 문명 게임</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="game-container">
+        <header>
+            <h1>석기시대 문명 게임</h1>
+            <div id="resource-bar">
+                <span>나무: <span id="wood-amount">0</span></span>
+                <span>돌: <span id="stone-amount">0</span></span>
+                <span>식량: <span id="food-amount">0</span></span>
+                <span>인구: <span id="population-amount">1</span></span>
+            </div>
+        </header>
+
+        <main>
+            <div id="game-map">
+                <!-- 게임 맵이 여기에 동적으로 생성됩니다. -->
+            </div>
+
+            <div id="action-panel">
+                <h2>액션</h2>
+                <button id="gather-wood-btn">나무 채집</button>
+                <button id="gather-stone-btn">돌 채집</button>
+                <button id="hunt-food-btn">식량 사냥</button>
+                <button id="build-hut-btn">움집 건설 (나무 10)</button>
+            </div>
+        </main>
+
+        <footer>
+            <p>문명 발전 상태: <span id="civilization-status">석기 시대</span></p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
